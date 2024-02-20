@@ -19,13 +19,15 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        margin-bottom: 50%;
       }
       div span {
         color: chocolate;
       }
+      div #addbtn {
+        width: 40px;
+        height: 10px;
+      }
     </style>
-    <link rel="stylesheet" href="./notes.js" />
     <link rel="shortcut icon" href="./icon/js-icon.png" type="image/x-icon" />
   </head>
   <body>
@@ -35,6 +37,10 @@
       <marquee behavior="scroll" direction="left">
         <h3>How JS works <span>behind the</span> scenes</h3>
       </marquee>
+
+      <button id="addbtn">Add Buttun</button>
     </div>
+
+    <script src="./JS-Engine.js"></script>
   </body>
 </html>
