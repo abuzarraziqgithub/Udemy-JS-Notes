@@ -1,9 +1,4 @@
-/*
-
-
-
-
-1. A High-Level overview of JavaScript:
+/*                 1. A High-Level overview of JavaScript:
 
 ---> JS Definition: JavaScript is: 
                                   High-Level : Human Readale code.
@@ -94,20 +89,103 @@
                                   How do we acheive that?
 
                                   Simply by using an event loop : which takes long running tasks , executes them in the "background" , and puts them back in the main thread once they are finished.
+*/
+
+/*                2. The JavaScript Engine and RunTime:
+
+
+---> JS Engine and How it works:
+
+                                   JS Engine: JS is a program , that executes javascript code.
+
+                                   JS has different engines , but the most usefull and famous is googles V-8 engine , that is used in chrome for client side app and also for server side , there is node js.
+                                   
+                                   
+                                   #
+
+
+
+                                   Components of JS-Engine: basically the js engine contains , a CALL STACK and a HEAP.
+                                   so , what actually they are?
+
+                                   The Call Stack is the component where our code is executed.
+
+
+                                   The Heap is the component , where objects are stored . 
+                                   
+                                   which objects?
+                                   The objects we created in our code.
+
+                                   The call stack stores the local primitive variables , and refrence variables to objects(which are in heap space.)
+
+                                   
+                                   
+                                   #
 
 
 
 
+                                   JavaScript RunTime in the browser:
+
+                                   So , we talk about the js engine and the components of it , now let's talk about the runtime of js .
+
+                                   we can say that , without the engine , there is no runtime and basically no js and execution at all.
+
+                                   let's come to the main peace:
+
+                                   basically the js runtime contains ,
+                                   a) WEB API's (DOM , TIMERS , Fetch API ....)
+
+                                   b) CALLBACK QUENE:
+                                   The callback quene is , where the event funtions takes place , like click on button can call a function the we have written , it contain data , timer etc.
 
 
-                            
+                                   and how the callback quene works?
+                                   
+                                   so let suppose we clicked on button and it shows some reaction,
+
+                                   so basically when we click on a button , the button onclick event was already  executed in the background (in this case the callback quene) , so this onclick function then send to the call stack for further execution using event loop.
 
 
-2. The JavaScript Engine and RunTime:
+                                   and I think this is the practicle example of non-blocking concurrency model of the Js.
+*/
+
+/*                3. Execution Context and The Call Stack:
+
+
+---> EXECUTION CONTEXT:
+
+                                Execution Context in JS:
+                                execution context is basically an enviroment , where the executon of the code takes place , and this execution is done with the correct way and this become the CALL STACK.
+
+                                So , what did I mean about the correct way of execution of the code ?
+
+                                When the compilation is done , means the code is converted into machine code.
+                                now it is time to execute that machine code.
+
+                                There are some steps involved:
+
+                                step1:
+
+                                Creation of the global execution context(for top-level code), the code which is not inside a function.
+
+                                step2:
+
+                                Execution of top-level code (inside Ex context)
+
+
+                                step3:
+
+                                Execution of functions and waiting for callbacks.
+                                In this step , the callstack is waiting for the callbacks to execute the functions further , and the callback functions are then come through event loop , like we said it before.
+
+
+                                so we understand what an execution context is:
+
+                                Now , let's dive deep into , what is inside of execution context or what execution context is made up of?
 
 
 
-
-
+                                
 
 */
