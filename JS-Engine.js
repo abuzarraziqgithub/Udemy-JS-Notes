@@ -131,7 +131,7 @@
 
                                    we can say that , without the engine , there is no runtime and basically no js and execution at all.
 
-                                   let's come to the main peace:
+                                   let's come to the main peice:
 
                                    basically the js runtime contains ,
                                    a) WEB API's (DOM , TIMERS , Fetch API ....)
@@ -186,6 +186,22 @@
 
 
 
-                                // hello
+---> What's Inside of Execution Context:
+                                        We now know that how the execution context works.
+                                        Now what we are thinking is about what is actually an execution context and what's inside of it:
+                                        
+                                        1: Variable Context: The variable context or enviroment is made up of let , const and var declarations, Functions , arguments object(it's the arguments of a funtion that is the part of that execution context).
 
-*/
+                                        2:Scope Chain: The execution context also have the Scope chain , which is basically a refrence to variable , which is located outside of a function.
+
+                                        3: It also contain the this keyword and this is generated during creation phase before execution.
+
+
+                                        Note: There is a point to remember , that the arraw function execution context doesn't have the argument object and the this keyword.we will see it later.
+                                        
+                                        So these are the phases or components that make execution context for functions as well as the code n the top level.
+                
+
+
+                                    
+                                        */
