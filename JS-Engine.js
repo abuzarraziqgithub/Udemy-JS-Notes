@@ -203,5 +203,248 @@
                 
 
 
-                                    
+                                        Note: I have shared some screenshots , you can check it .
                                         */
+
+/*                4. Scope and the Scope Chain:
+
+----> SCOPING : scoping actually and simply means , how the variables are organized in the code , how we  can access variables etc.
+
+----> Lexical Scoping : lexical scoping simply means that the scoping(The access and organization of Variables) is controlled by placement of functions and blocks in the code.
+
+It means that we can access a global scope variable inside the function and also  inner function can acccess thier parent function variables , but we can't access the function variables outside the function block.
+
+----> SCOPE: scope is a space or enviroment in which certain variable is declared (variable enviroment in case of functions) . 
+
+
+There is three scope in js:
+
+1. Global Scope.
+2. Function Scope.
+3. Block scope.
+
+Here's The Example:
+let a = 20;
+
+let func = function()
+{
+    let b = 30;
+    console.log("a and b is accessible (outer):", a  , b); // we can acess the global scope varibale inside the function;
+
+    var innerFunc = function()
+    {
+        var c = 40;
+        console.log("a and b and c is accessible ( inner):", a , b , c);
+        // We can also access global scope variable,and the parent function variable inside inner or child function.
+        }
+    innerFunc();
+    return;
+}
+func();
+console.log("only a is accessible (global):" , a );
+
+
+--->Scope of a variable:
+                        Now we know about the scoping , lexical scope , and scope . lets's move on the next topic , which is scope of a variable.
+                        The name itself means that , the region or space of our code where a certain can be accessed.
+
+
+                        Note: The difference between in scope and scope of a variable : 
+                        In scope , we actually declare a variable in enviroment or space.
+
+                        and In scope of a variable means , that the region or piece of code , where a variable can be accessed.
+
+
+
+
+
+                        ---> Three 3 Types of Functions:
+
+                        1.Global Scope: 
+
+                                      Example: 
+                                             const me = "Abuzar";
+                                             const job = "Student";
+                                             const year = "2002";
+
+                       Explanation:
+                                   Outside of any function or block.
+
+                                   variables declared in global scope are accessible everywhere.
+                        
+
+                        2.Function Scope:
+
+                                         Example:
+                                                 function calcAge(birthYear)
+                                                 {
+                                                    const now = 2037;
+                                                    const age  = now - birthYear;
+
+                                                    return age;
+                                                 }
+                                        console.log(now) // Reference error.
+
+                        Explanation:
+                                    Variables are accessible only inside function , Not outside.
+
+                                    Also called local scope.
+                        
+
+                    3. Block Scope(ES6):
+                                       
+                                          Example:
+                                                  if(year >= 2002 && year <= 2000)
+                                                  {
+                                                    const millenial = true;
+                                                    const food = 'Avocado toast';
+
+                                                  }
+                        Explanation:
+                                     Variables are accessible only inside block(block scoped);
+
+                                     However , this only applies to let and const variables .
+                                     It means that we can access variables outside the block if have a var decalaration.
+
+
+                                     --> Block scoped were introduced in ES6 , before that , only function and global scope were existed 
+                        
+
+
+
+
+--> The Scope Chain:
+                      let's see an example first :
+                       
+                       -> CODE:
+                               const myName = 'Abuzar';
+
+                               function first()
+                               {
+                                const age =30;
+
+                                if(age >= 30)
+                                {
+                                  const decade = 3;
+                                  var millenial = true;
+                                }
+
+
+                                function second()
+                                {
+                                  const job = 'teacher';
+
+                                  console.log(`${myName} is a ${age} old ${job}`)
+                                }
+
+                                second();
+                               }
+                            
+                               first();
+
+
+                      --> Explanation:
+                                      Now we have a code to represent how the scope chain works.
+
+
+                          1st step:
+                                   In the first step, The global scope will make execution context (also called global execution context) first ;
+
+                                                Global Scope
+                                                  myName = 'Abuzar'
+
+                          2nd step:
+                                    Then first() function will make execution context.
+
+                                    and it will make nested structure.
+
+                          3rd step: 
+                                   Then in the first() function , the second() function should make execution context
+
+                          These all takes place in the Call Stack.
+
+
+                Now the concept here is : This process is called Variable lookup in scope chain.
+
+                Because , In the second() function , we can see that , 
+                we have access , the "myName" varaible , which is a global scope variable , also the "age"  variable which is local or function scope. So , it will work perfectly , because of the concept of scope chain.
+
+
+                In scope chain , we can access all the variables present in the parent context.
+
+                Like in the previous code:
+
+                we accessed the "age" variable , which was initialized in first() function, and also the global scope variable.
+
+
+                Conclusion:
+                           We can simply say that: The inner scope has access to variables from all outer scopes.
+
+                Note: The child scope has access to thier parent scope , but the parent doesn't have access to the child scope.
+
+                       
+--> Important to note:
+                      The decade variable in the if block , is actually a block scoped variable , and in the ES6 , the let and const are treated is as block scoped . 
+
+                      So , it will create thier own scope in the execution context.
+                      and the  millenial is not a block scoped and is local scoped because of var delaration and therefore , it is the variable of first() function.
+
+                      and therefore , it means that it has also access for the second or child function.
+
+                      Scope chain also applies to block scope variables , and therefore , it has the access of the outer scoped variables but does not have access to child scope like second() function and also the second() function  doesn't have access to the block scope.
+
+                      Why is that :
+                                  it is because of the lexical scoping concept in Js.
+                                  and that's because , these both are siblings to each other , and childs pf one function , ad one is not written inside the other one.
+
+                                  noe of these scopes are written inside of one another.
+
+                                  and that's the rule of lexical scoping.  
+
+
+
+                      
+
+                ---> Important Things Explained:
+                          
+                -> The scope chain has nothing to do with the order in which functions were called  "or" with the order of the execution contexts in th call stack.
+                              
+                -> The Scope chain does get the variable enviroment from the execution cotext.
+
+
+
+
+
+
+
+
+--> WHAT WE HAVE LEARNED: 
+                         ->Scoping ask the question , " Where do variables live?" or " Where can we access a certain variable , and where not ?";
+
+
+                         ->There are 3 Types of scope in JavaScript: The global scope, scopes defined by functions , and scopes defined by blocks;
+
+                         
+                         ->Only let and const variables are blocked-scoped. Variables declared whith var end up in the closest function scope;
+
+
+                         ->In JavaScript , we have lexical scoping. so the rules of where we can access variables are based on exactly where in the code functions and blocks are written;
+
+
+                         ->Every scope always has access to all the variables from all it's outer scopes.This is the Scope chain.
+
+
+                         ->When a variable is not in the current , the engine looks up in the scope chain until it finds the variable it's looking for. This is called variable lookup;
+
+
+                         ->The scope chain is a one-way street: a scope will never , ever has access to the variables of an inner scope;
+
+
+                         ->The scope chain in a certian scope is equal to adding together all the variable enviroments of the all parent scopes;
+
+
+                         ->The scope chain has nothing to do with the order in which functions were called . It doesn't affect the scope chain at all.
+
+
+
+                 */
