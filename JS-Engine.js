@@ -3,7 +3,7 @@
 /*                 1. A High-Level overview of JavaScript:
 
 ---> JS Definition: JavaScript is: 
-                                  High-Level : Human Readale code.
+                                  High-Level : Human Readable code.
                                   
                                   
                                   #
@@ -100,7 +100,7 @@
 
                                    JS Engine: JS is a program , that executes javascript code.
 
-                                   JS has different engines , but the most usefull and famous is googles V-8 engine , that is used in chrome for client side app and also for server side , there is node js.
+                                   JS has different engines , but the most useful and famous is googles V-8 engine , that is used in chrome for client side app and also for server side , there is node js.
                                    
                                    
                                    #
@@ -129,11 +129,11 @@
 
                                    JavaScript RunTime in the browser:
 
-                                   So , we talk about the js engine and the components of it , now let's talk about the runtime of js .
+                                   So , we talked about the js engine and the components of it , now let's talk about the runtime of js .
 
                                    we can say that , without the engine , there is no runtime and basically no js and execution at all.
 
-                                   let's come to the main peice:
+                                   let's come to the main piece:
 
                                    basically the js runtime contains ,
                                    a) WEB API's (DOM , TIMERS , Fetch API ....)
@@ -248,7 +248,7 @@ console.log("only a is accessible (global):" , a );
 
 --->Scope of a variable:
                         Now we know about the scoping , lexical scope , and scope . lets's move on the next topic , which is scope of a variable.
-                        The name itself means that , the region or space of our code where a certain can be accessed.
+                        The name itself means that , the region or space of our code where a certain variable is accessed.
 
 
                         Note: The difference between in scope and scope of a variable : 
@@ -260,7 +260,7 @@ console.log("only a is accessible (global):" , a );
 
 
 
-                        ---> Three 3 Types of Functions:
+                        ---> Three 3 Types of Scope :
 
                         1.Global Scope: 
 
