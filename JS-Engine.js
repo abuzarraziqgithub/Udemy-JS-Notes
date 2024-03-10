@@ -11,7 +11,6 @@
 
                                   Garbage-Collected : JS engine(like googles V8) has the ability to cleanup and optimize the code by collecting the unused and unneccessary objects etc.
 
-
                                   #
 
 
